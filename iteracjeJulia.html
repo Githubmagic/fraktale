@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Iteracje Julia Set</title>
+</head>
+<body>
+Punkt startowy:<br>
+a=<input type="text"  id="a" value="-0.5">
+b=<input type="text"  id="b" value="0.3"><br>
+wyraz wolny:<br>
+c=<input type="text"  id="c" value="0">
+d=<input type="text"  id="d" value="0.5"><br>
+Ilość iteracji <input type="text"  id="ile"><br>
+<input type="button" value="GENERUJ CIĄG" onclick="iteracje()">
+<div id="ekran" style="height: 400px; width: 600px;">
+	
+</div>
+<script type="text/javascript">
+function iteracje()
+{
+var a=Number(document.getElementById("a").value);
+var b=Number(document.getElementById("b").value);
+var c=Number(document.getElementById("c").value);
+var d=Number(document.getElementById("d").value);
+var ile=Number(document.getElementById("ile").value);
+ licz=0;
+ document.getElementById("ekran").innerHTML="";
+ for (var i=1;i<=ile;i++)
+ {
+ x= a*a-b*b+c;
+ y= 2*a*b+d;
+ licz++;
+ a=x;
+ b=y;
+ document.getElementById("ekran").innerHTML+=x+"||"+y+"i"+"<br>";
+ } 
+
+}	
+</script>
+
+
+</body>
+</html>
